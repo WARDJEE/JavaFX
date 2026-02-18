@@ -2,8 +2,6 @@ package week01.Dice;
 
 import javafx.scene.image.Image;
 
-import java.util.Objects;
-
 public class DicePresenter {
     private DiceView view;
     private Dice model;
