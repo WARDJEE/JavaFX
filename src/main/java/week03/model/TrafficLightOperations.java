@@ -82,18 +82,17 @@ public class TrafficLightOperations {
         return trafficLight.getTrafficLightFlashing();
     }
 
-    /*public void switchTrafficLightFlashingOn(TrafficLightView view){
+    public void switchTrafficLightFlashingOn(){
             if (isTrafficLightOn()){
-                view.
-                while (true){
-                    view.
-                }
+                trafficLight.setTrafficLightFlashing(true);
             }
     }
 
     public void switchTrafficLightFlashingOff(){
-
-    }*/
+        if (isTrafficLightOn()){
+            trafficLight.setTrafficLightFlashing(false);
+        }
+    }
 }
 
 

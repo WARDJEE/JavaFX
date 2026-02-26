@@ -1,6 +1,9 @@
 package week03.view.trafficLightScreen;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import week03.view.showData.ShowDataPresenter;
 import week03.view.showData.ShowDataView;
 import week03.model.TrafficLightOperations;
@@ -19,11 +22,28 @@ import javafx.stage.WindowEvent;
 public class TrafficLightPresenter {
     private final TrafficLightOperations model;
     private final TrafficLightView view;
+    private Timeline flashTimeline;
 
     public TrafficLightPresenter(
             TrafficLightOperations model, TrafficLightView view) {
         this.model = model;
         this.view = view;
+
+        flashTimeline = new Timeline(
+                new KeyFrame(Duration.seconds(0.5), e -> {
+                    view.getTopCircle().setFill(Color.BLACK);
+                    view.getBottomCircle().setFill(Color.BLACK);
+
+                    if (view.getMiddleCircle().getFill() == Color.YELLOW) {
+                        view.getMiddleCircle().setFill(Color.BLACK);
+
+                    } else {
+                        view.getMiddleCircle().setFill(Color.YELLOW);
+                    }
+
+                }));
+        flashTimeline.setCycleCount(Timeline.INDEFINITE);
+
         addEventHandlers();
         updateView();
     }
@@ -35,6 +55,7 @@ public class TrafficLightPresenter {
                 if (!model.isTrafficLightOn()) {
                     model.switchTrafficLightOn();
                 }
+
                 updateView();
             }
         });
@@ -44,6 +65,12 @@ public class TrafficLightPresenter {
                 if (model.isTrafficLightOn()) {
                     model.switchTrafficLightOff();
                 }
+                if (model.isTrafficLightFlashing()) {
+                    model.switchTrafficLightFlashingOff();
+                    flashTimeline.stop();
+                    view.getFlashing().setText("Flashing");
+                }
+
                 updateView();
             }
         });
@@ -73,7 +100,26 @@ public class TrafficLightPresenter {
         });
 
         view.getSwitchColorButton().setOnAction(e -> {
-            model.trafficLightNextColor();
+            if (!model.isTrafficLightFlashing()){
+                model.trafficLightNextColor();
+                updateView();
+            }
+        });
+
+        view.getFlashing().setOnAction(e -> {
+            if (model.isTrafficLightFlashing()) {
+                view.getFlashing().setText("Flashing");
+                model.switchTrafficLightFlashingOff();
+                flashTimeline.stop();
+
+            } else {
+                if (model.isTrafficLightOn()) {
+                    view.getFlashing().setText("No flashing");
+                    model.switchTrafficLightFlashingOn();
+                    flashTimeline.play();
+                }
+
+            }
             updateView();
         });
     }

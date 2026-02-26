@@ -34,7 +34,7 @@ public class TrafficLightView extends BorderPane {
         stopRadioButton = new RadioButton("OFF");
         exitMI = new MenuItem("Exit");
         showDataMI = new MenuItem("ShowData");
-        switchColorButton = new Button("switch light");
+        switchColorButton = new Button("Switch light");
         flashing = new Button("Flashing");
     }
 
@@ -94,8 +94,12 @@ public class TrafficLightView extends BorderPane {
         return this.showDataMI;
     }
 
-    public Button getSwitchColorButton() {
+    Button getSwitchColorButton() {
         return switchColorButton;
+    }
+
+    Button getFlashing() {
+        return flashing;
     }
 }
 
