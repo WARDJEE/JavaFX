@@ -1,4 +1,4 @@
-package week02.Time;
+package week02.time;
 
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;

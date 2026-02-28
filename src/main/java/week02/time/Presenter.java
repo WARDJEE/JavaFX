@@ -1,4 +1,4 @@
-package week02.Time;
+package week02.time;
 
 import java.time.LocalTime;
 
@@ -21,6 +21,11 @@ public class Presenter {
 
             int hours = (int) value;
             int minutes = (int) Math.round((value - hours) * 60);
+
+            if (minutes == 60) {
+                hours++;
+                minutes = 0;
+            }
 
             model.setCurrentTime(LocalTime.of(hours, minutes));
             updateView();

@@ -1,4 +1,4 @@
-package week02.Time;
+package week02.time;
 
 import java.time.Duration;
 import java.time.LocalTime;

@@ -1,4 +1,4 @@
-package week02.Birds;
+package week02.birds;
 
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Menu;

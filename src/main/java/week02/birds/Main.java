@@ -1,4 +1,4 @@
-package week02.Birds;
+package week02.birds;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
