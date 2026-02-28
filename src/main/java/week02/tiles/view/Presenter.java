@@ -1,6 +1,7 @@
 package week02.tiles.view;
 
-import be.kdg.tiles.model.TileModel;
+
+import week02.tiles.model.TileModel;
 
 public class Presenter {
     private final TileModel model;
@@ -22,31 +23,53 @@ public class Presenter {
 
     private int translateXToColumn(final double x) {
         final double width = this.view.getCanvas().getWidth();
-        final int columnResult = (int)(x / width * TileModel.COLUMNS);
+        final int columnResult = (int) (x / width * TileModel.COLUMNS);
         if (columnResult >= 0 && columnResult < TileModel.COLUMNS) {
             return columnResult;
-        }
-        else {
+        } else {
             return -1;
         }
     }
 
     private int translateYToRow(final double y) {
         final double height = this.view.getCanvas().getHeight();
-        final int rowResult = (int)(y / height * TileModel.ROWS);
+        final int rowResult = (int) (y / height * TileModel.ROWS);
         if (rowResult >= 0 && rowResult < TileModel.ROWS) {
             return rowResult;
-        }
-        else {
+        } else {
             return -1;
         }
     }
 
     private void addEventHandlers() {
         // TODO: complete this method
+        view.getCanvas().setOnMouseMoved(e -> {
+            currentHoverColumn = translateXToColumn(e.getX());
+            currentHoverRow = translateYToRow(e.getY());
+            updateView();
+
+        });
+
+        view.setOnMouseClicked(e -> {
+            currentHoverColumn = translateXToColumn(e.getX());
+            currentHoverRow = translateYToRow(e.getY());
+            model.setSelectedTile(currentHoverColumn, currentHoverRow);
+            updateView();
+        });
+
+        view.getCanvas().setOnMouseExited(e -> {
+            currentHoverColumn = -1;
+            currentHoverRow = -1;
+            updateView();
+
+        });
+
     }
 
     private void updateView() {
         // TODO: complete this method
+        view.displayCurrentTiles(currentHoverColumn, currentHoverRow, model.getSelectedTileColumn(), model.getSelectedTileRow());
+
+
     }
 }

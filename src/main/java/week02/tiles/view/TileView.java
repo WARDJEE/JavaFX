@@ -1,10 +1,10 @@
 package week02.tiles.view;
 
-import be.kdg.tiles.model.TileModel;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import week02.tiles.model.TileModel;
 
 public class TileView extends BorderPane {
     private Canvas canvas;

@@ -1,11 +1,11 @@
 package week02.tiles;
 
-import be.kdg.tiles.model.TileModel;
-import be.kdg.tiles.view.Presenter;
-import be.kdg.tiles.view.TileView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import week02.tiles.model.TileModel;
+import week02.tiles.view.Presenter;
+import week02.tiles.view.TileView;
 
 public class Main extends Application {
     @Override
