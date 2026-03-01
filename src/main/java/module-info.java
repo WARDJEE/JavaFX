@@ -1,5 +1,7 @@
 module hello {
     requires javafx.controls;
     requires freetts;
-    exports week02.cityhall;
+    exports ip;
+    exports ip.view;
+    exports ip.router;
 }

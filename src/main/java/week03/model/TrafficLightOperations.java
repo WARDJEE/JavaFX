@@ -1,7 +1,5 @@
 package week03.model;
 
-import week03.view.trafficLightScreen.TrafficLightView;
-
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -11,7 +9,7 @@ import java.util.Map;
 
 import static java.time.LocalTime.now;
 
-public class TrafficLightOperations {
+public class TrafficLightOperations extends Observable{
 
     // private attributes
     private TrafficLight trafficLight;
@@ -48,19 +46,25 @@ public class TrafficLightOperations {
     public void switchTrafficLightOn() {
         this.trafficLight.setTrafficLightStatus(true);
         this.startTime = now();
+        notifyObservers(this);
     }
 
     public void switchTrafficLightOff() {
         this.trafficLight.setTrafficLightStatus(false);
         this.endTime = now();
         addDuration();
+        notifyObservers(this);
+
     }
 
     public void trafficLightNextColor() {
-        this.endTime = now();
-        addDuration();
-        this.trafficLight.nextColor();
-        this.startTime = now();
+        if(isTrafficLightOn()) {
+            this.endTime = now();
+            addDuration();
+            this.trafficLight.nextColor();
+            this.startTime = now();
+            notifyObservers(this);
+        }
     }
 
     private void addDuration() {
@@ -68,6 +72,8 @@ public class TrafficLightOperations {
         Duration difference = (Duration.between(this.startTime, this.endTime));
         listOfDurations.add(difference);
         this.durations.put(this.trafficLight.getTrafficLightColor(), listOfDurations);
+        notifyObservers(this);
+
     }
 
     public Map<TrafficLightColor, List<Duration>> getDurations() {
@@ -85,12 +91,16 @@ public class TrafficLightOperations {
     public void switchTrafficLightFlashingOn(){
             if (isTrafficLightOn()){
                 trafficLight.setTrafficLightFlashing(true);
+                notifyObservers(this);
+
             }
     }
 
     public void switchTrafficLightFlashingOff(){
         if (isTrafficLightOn()){
             trafficLight.setTrafficLightFlashing(false);
+            notifyObservers(this);
+
         }
     }
 }

@@ -1,4 +1,4 @@
-package Testje;
+package ip.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

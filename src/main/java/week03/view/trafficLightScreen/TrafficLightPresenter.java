@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import week03.model.TrafficLightObserver;
 import week03.view.showData.ShowDataPresenter;
 import week03.view.showData.ShowDataView;
 import week03.model.TrafficLightOperations;
@@ -19,7 +20,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class TrafficLightPresenter {
+public class TrafficLightPresenter implements TrafficLightObserver {
     private final TrafficLightOperations model;
     private final TrafficLightView view;
     private Timeline flashTimeline;
@@ -28,6 +29,8 @@ public class TrafficLightPresenter {
             TrafficLightOperations model, TrafficLightView view) {
         this.model = model;
         this.view = view;
+
+        model.addObserver(this);
 
         flashTimeline = new Timeline(
                 new KeyFrame(Duration.seconds(0.5), e -> {
@@ -48,6 +51,12 @@ public class TrafficLightPresenter {
         updateView();
     }
 
+    public void update(Object arg){
+        updateView();
+    }
+
+
+
     private void addEventHandlers() {
         view.getStartRadioButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -56,7 +65,6 @@ public class TrafficLightPresenter {
                     model.switchTrafficLightOn();
                 }
 
-                updateView();
             }
         });
         view.getStopRadioButton().setOnAction(new EventHandler<ActionEvent>() {
@@ -71,7 +79,6 @@ public class TrafficLightPresenter {
                     view.getFlashing().setText("Flashing");
                 }
 
-                updateView();
             }
         });
         view.getshowDataItem().setOnAction(new EventHandler<ActionEvent>() {
@@ -102,7 +109,6 @@ public class TrafficLightPresenter {
         view.getSwitchColorButton().setOnAction(e -> {
             if (!model.isTrafficLightFlashing()){
                 model.trafficLightNextColor();
-                updateView();
             }
         });
 
@@ -120,7 +126,6 @@ public class TrafficLightPresenter {
                 }
 
             }
-            updateView();
         });
     }
 
