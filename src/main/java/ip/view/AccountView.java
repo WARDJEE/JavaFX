@@ -1,5 +1,6 @@
 package ip.view;
 
+import ip.style.SahkkuButton;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -21,8 +22,8 @@ public class AccountView extends VBox {
     private void initialiseNodes() {
         close = new Button("✕");
         title = new Label("Sáhkku");
-        login = new Button("Log in");
-        create = new Button("Create account");
+        login = new SahkkuButton("Log in");
+        create = new SahkkuButton("Create account");
     }
 
     private void styleNodes(){
@@ -32,9 +33,13 @@ public class AccountView extends VBox {
         this.setMaxSize(300, 200);
 
         this.setStyle("""
-            -fx-background-color: white;
+            -fx-background-color: #5f9caa;
             -fx-background-radius: 10;
         """);
+
+        login.setMaxWidth(100);
+        create.setMaxWidth(100);
+
 
         close.setStyle("""
             -fx-background-color: red;
