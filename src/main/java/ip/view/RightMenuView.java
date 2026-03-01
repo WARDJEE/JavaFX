@@ -1,5 +1,6 @@
 package ip.view;
 
+import ip.style.SahkkuButton;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -18,16 +19,18 @@ public class RightMenuView extends VBox{
     }
 
     private void initialiseNodes(){
-        settings = new Button("Settings");
-        rules = new Button("Rules");
-        leaderboard = new Button("Leaderboard");
-        account = new Button("Account");
+        settings = new SahkkuButton("Settings");
+        rules = new SahkkuButton("Rules");
+        leaderboard = new SahkkuButton("Leaderboard");
+        account = new SahkkuButton("Account");
     }
 
     private void styleNodes(){
         this.setSpacing(15);
         this.setPadding(new Insets(15));
         this.setAlignment(Pos.TOP_RIGHT);
+
+
     }
 
     private void layoutNodes(){
