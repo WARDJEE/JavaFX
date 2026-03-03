@@ -33,7 +33,9 @@ public class AccountView extends VBox {
         this.setMaxSize(300, 200);
 
         this.setStyle("""
-            -fx-background-color: #5f9caa;
+            -fx-background-color: rgba(20, 30, 40, 0.8);
+        -fx-border-color: #00FFFF;
+        -fx-border-radius: 10;
             -fx-background-radius: 10;
         """);
 

@@ -10,15 +10,20 @@ public class SahkkuButton extends Button {
 
     private void styleButton() {
         this.setMaxWidth(Double.MAX_VALUE);
-        this.setStyle("""
-            -fx-background-color: #aa8e5f;
-            -fx-text-fill: white;
-            -fx-font-size: 14px;
-            -fx-background-radius: 5;
-        """);
 
-        // Je kunt zelfs hover-effecten toevoegen!
-        this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: #87714c;"));
-        this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color: #aa8e5f;"));
+        this.setStyle("""
+                -fx-background-color: rgba(20, 30, 40, 0.6);
+                -fx-text-fill: #E0F7FA;
+                -fx-border-color: rgba(0, 255, 255, 0.3);
+                -fx-background-insets: 1;
+                -fx-border-radius: 10;
+            -fx-background-radius: 10;
+                """);
+       // -fx-border-color: #e2a76f;
+
+        /* Hover */
+        this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: rgba(20, 30, 40);"));
+        this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color:  rgba(20, 30, 40, 0.6);"));
+
     }
 }
