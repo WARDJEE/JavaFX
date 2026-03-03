@@ -16,8 +16,8 @@ public class SahkkuButton extends Button {
                 -fx-text-fill: #E0F7FA;
                 -fx-border-color: rgba(0, 255, 255, 0.3);
                 -fx-background-insets: 1;
-                -fx-border-radius: 10;
-            -fx-background-radius: 10;
+                -fx-border-radius: 8;
+            -fx-background-radius: 8;
                 """);
        // -fx-border-color: #e2a76f;
 

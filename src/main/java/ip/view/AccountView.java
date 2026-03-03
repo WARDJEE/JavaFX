@@ -35,8 +35,8 @@ public class AccountView extends VBox {
         this.setStyle("""
             -fx-background-color: rgba(20, 30, 40, 0.8);
         -fx-border-color: #00FFFF;
-        -fx-border-radius: 10;
-            -fx-background-radius: 10;
+        -fx-border-radius: 8;
+            -fx-background-radius: 8;
         """);
 
         login.setMaxWidth(100);
