@@ -2,7 +2,7 @@ package ip;
 
 import ip.router.Router;
 import ip.view.*;
-import ip.view.Match.MatchStats;
+import ip.view.Match.Match;
 import ip.view.Menu.MainMenuView;
 import javafx.stage.Stage;
 
@@ -37,8 +37,8 @@ public class Presenter {
 
         // Play
         mainMenuView.getLeftMenu().getPlay().setOnAction(e -> {
-            MatchStats stats = new MatchStats();
-            router.showOverlay(stats);
+            Match match = new Match();
+            router.showOverlay(match);
 
         });
     }
