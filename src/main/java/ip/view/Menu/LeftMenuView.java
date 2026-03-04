@@ -1,4 +1,4 @@
-package ip.view;
+package ip.view.Menu;
 
 import ip.style.SahkkuButton;
 import javafx.geometry.Insets;
@@ -45,5 +45,9 @@ public class LeftMenuView extends VBox {
 
     public Button getExit() {
         return this.exit;
+    }
+
+    public Button getPlay() {
+        return play;
     }
 }

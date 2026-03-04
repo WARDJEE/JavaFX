@@ -1,4 +1,4 @@
-package ip.view;
+package ip.view.Menu;
 
 import ip.style.SahkkuButton;
 import javafx.geometry.Insets;

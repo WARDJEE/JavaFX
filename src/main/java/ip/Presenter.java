@@ -2,6 +2,8 @@ package ip;
 
 import ip.router.Router;
 import ip.view.*;
+import ip.view.Match.MatchStats;
+import ip.view.Menu.MainMenuView;
 import javafx.stage.Stage;
 
 public class Presenter {
@@ -31,6 +33,13 @@ public class Presenter {
 
             router.showOverlay(dimView);
             router.showOverlay(accountView);
+        });
+
+        // Play
+        mainMenuView.getLeftMenu().getPlay().setOnAction(e -> {
+            MatchStats stats = new MatchStats();
+            router.showOverlay(stats);
+
         });
     }
 }

@@ -1,7 +1,7 @@
 package ip;
 
 import ip.router.Router;
-import ip.view.MainMenuView;
+import ip.view.Menu.MainMenuView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;

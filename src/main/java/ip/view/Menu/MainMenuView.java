@@ -1,4 +1,4 @@
-package ip.view;
+package ip.view.Menu;
 
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
