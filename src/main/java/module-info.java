@@ -1,5 +1,5 @@
 module hello {
     requires javafx.controls;
     requires freetts;
-    exports ip;
+    exports week02.calculator;
 }
