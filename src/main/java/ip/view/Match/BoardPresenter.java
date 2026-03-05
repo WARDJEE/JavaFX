@@ -1,6 +1,7 @@
 package ip.view.Match;
 
 import ip.model.Pawn;
+import javafx.scene.paint.Color;
 
 public class BoardPresenter {
     private Board view;
@@ -18,11 +19,13 @@ public class BoardPresenter {
             // De binnenste lus loopt door alle 14 kolommen
             for (int col = 0; col < view.getColumns(); col++) {
                 Pawn pawn = new Pawn();
-                Pawn pawn2 = new Pawn();
+                if ((row == 0)) {
+                    pawn.setFill(Color.web("#50b4c3"));
+                } else {
+                    pawn.setFill(Color.web("#db604c"));
+                }
 
-                // Plaats de pion op de huidige positie (col, row)
                 placePawn(pawn, col, row, pawn.isActivated());
-                placePawn(pawn2, col, row, pawn2.isActivated());
 
             }
         }

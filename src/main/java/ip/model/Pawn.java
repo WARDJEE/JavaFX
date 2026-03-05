@@ -10,7 +10,6 @@ public class Pawn extends Piece{
         isActivated = false;
         setHeight(15);
         setWidth(30);
-        setFill(Color.LIGHTBLUE);
         setStroke(Color.WHITE);
         setStrokeWidth(2);
 

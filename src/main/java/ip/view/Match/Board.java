@@ -1,8 +1,6 @@
 package ip.view.Match;
 
-import ip.model.Pawn;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 
 public class Board extends GridPane {
