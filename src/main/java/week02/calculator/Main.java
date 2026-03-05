@@ -22,7 +22,7 @@ public class Main extends Application {
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(new Scene(view));
         // TODO: Uncomment the following line as soon as you've implemented the constructor.
-        Presenter presenter = new Presenter(model, view);
+        new Presenter(model, view);
         primaryStage.show();
     }
 }
