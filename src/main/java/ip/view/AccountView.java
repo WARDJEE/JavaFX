@@ -14,7 +14,7 @@ public class AccountView extends StackPane {
     private Label title;
     private Button login;
     private Button create;
-    private VBox contentBox; // De box waar de tekst en knoppen in staan
+    private VBox contentBox;
 
     public AccountView(){
         initialiseNodes();
@@ -27,7 +27,7 @@ public class AccountView extends StackPane {
         title = new Label("Sáhkku");
         login = new SahkkuButton("Log in");
         create = new SahkkuButton("Create account");
-        contentBox = new VBox(); // Hier komt de inhoud in
+        contentBox = new VBox();
     }
 
     private void styleNodes(){
@@ -58,15 +58,17 @@ public class AccountView extends StackPane {
             -fx-font-weight: bold;
         """);
 
+
+    }
+
+    private void layoutNodes() {
         // Place close
         StackPane.setAlignment(close, Pos.TOP_RIGHT);
         close.setTranslateX(10);
         close.setTranslateY(-10);
 
         this.setMaxSize(300, 200);
-    }
 
-    private void layoutNodes() {
         contentBox.getChildren().addAll(title, login, create);
 
         this.getChildren().addAll(contentBox, close);
