@@ -18,10 +18,9 @@ public class SahkkuButton extends Button {
                 -fx-background-insets: 1;
                 -fx-border-radius: 8;
             -fx-background-radius: 8;
-                """);
-       // -fx-border-color: #e2a76f;
+            """);
 
-        /* Hover */
+        // Hover effect
         this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: rgba(20, 30, 40);"));
         this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color:  rgba(20, 30, 40, 0.6);"));
 

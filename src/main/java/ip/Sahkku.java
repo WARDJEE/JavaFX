@@ -1,8 +1,8 @@
 package ip;
 
 import ip.router.Router;
+import ip.view.Menu.MainMenuPresenter;
 import ip.view.Menu.MainMenuView;
-import ip.view.Menu.Presenter;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -13,11 +13,12 @@ public class Sahkku extends Application {
     public void start(Stage stage) {
         StackPane root = new StackPane();
         Router router = new Router(root);
+
         // Main menu
         MainMenuView mainMenuView = new MainMenuView();
 
         // Presenter
-        new Presenter(mainMenuView, router, stage);
+        new MainMenuPresenter(mainMenuView, router, stage);
 
         root.getChildren().add(mainMenuView);
 

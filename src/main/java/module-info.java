@@ -3,5 +3,4 @@ module hello {
     requires freetts;
     requires java.management;
     exports ip;
-    exports ip.view.Menu;
 }

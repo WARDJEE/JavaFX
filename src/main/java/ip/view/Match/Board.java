@@ -9,19 +9,29 @@ public class Board extends GridPane {
 
 
     public Board() {
+        styleNodes();
+        makeBoard();
+
+    }
+
+
+    private void styleNodes(){
         this.setHgap(2);
         this.setVgap(2);
 
         setStyle("""
--fx--fx-background-color: black;
-padding: 1;""");
+                 -fx-background-color: black;
+                 padding: 1;
+                 """);
+    }
 
-        // 3. Voeg je cellen toe (bijv. 15 rijen x 3 kolommen)
-        for (int row = 0; row < 2; row++) {
-            for (int col = 0; col < 14; col++) {
+    private void makeBoard(){
+        // Bord maken
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < width; col++) {
                 StackPane cell = new StackPane();
                 cell.setPrefSize(50, 100);
-                // Geef de cel een eigen achtergrondkleur, anders zie je de grid-kleur erdoorheen
+                // Kleur vakje
                 cell.setStyle("-fx-background-color: white;");
 
                 add(cell, col, row);
