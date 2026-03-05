@@ -1,5 +1,6 @@
 package week04.numericalSystemsConverter.view;
 
+import javafx.scene.control.Alert;
 import week04.numericalSystemsConverter.model.ModelConverter;
 
 public class ConverterPresenter {
@@ -15,10 +16,17 @@ public class ConverterPresenter {
     }
 
     private void addEventHandlers() {
+
         view.getConvertButton().setOnAction(e -> {
-                    convertedValue = model.convertToNumericalSystem(view.getDecimalValue(), ModelConverter.NumericalSystems.valueOf(view.getNumericalSystems()));
-                    updateView();
+                    try {
+                        ModelConverter.NumericalSystems stelsel = ModelConverter.NumericalSystems.valueOf(view.getNumericalSystems());
+                        convertedValue = model.convertToNumericalSystem(view.getDecimalValue(), stelsel);
+                        updateView();
+                    } catch (IllegalArgumentException ex) {
+                        showError(ex);
+                    }
                 }
+
         );
 
         view.getComboBox().setOnAction(e -> view.getConvertedValue().setText("XXXXX"));
@@ -28,5 +36,12 @@ public class ConverterPresenter {
 
     private void updateView() {/* fills view*/
         view.getConvertedValue().setText(convertedValue);
+    }
+
+    private void showError(Exception exc) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error!");
+        alert.setContentText(exc.getMessage());
+        alert.showAndWait();
     }
 }
