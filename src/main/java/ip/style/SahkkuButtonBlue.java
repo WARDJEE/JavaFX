@@ -12,8 +12,8 @@ public class SahkkuButtonBlue extends Button {
         this.setMaxWidth(Double.MAX_VALUE);
 
         this.setStyle("""
-                -fx-background-color: #317c87;
-                -fx-text-fill: #E0F7FA;
+                -fx-background-color: #50b4c3;
+                -fx-text-fill: white;
                 -fx-border-color: #1a1016;
                 -fx-background-insets: 1;
                 -fx-border-radius: 8;
@@ -22,7 +22,7 @@ public class SahkkuButtonBlue extends Button {
 
         // Hover effect
         this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: #271854;"));
-        this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color:  #317c87;"));
+        this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color:  #50b4c3;"));
 
     }
 }

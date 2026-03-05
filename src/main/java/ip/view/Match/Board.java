@@ -20,7 +20,7 @@ public class Board extends GridPane {
         this.setVgap(2);
 
         setStyle("""
-                 -fx-background-color: black;
+                 -fx-background-color: white;
                  padding: 1;
                  """);
     }
@@ -32,7 +32,7 @@ public class Board extends GridPane {
                 StackPane cell = new StackPane();
                 cell.setPrefSize(50, 100);
                 // Kleur vakje
-                cell.setStyle("-fx-background-color: white;");
+                cell.setStyle("-fx-background-color: #f6dbba;");
 
                 add(cell, col, row);
             }

@@ -24,7 +24,7 @@ public class Match extends StackPane {
 
     private void styleNodes(){
         setStyle("""
-                -fx-background-color: #f6dbba;
+                -fx-background-color: #74c99e;
                 """);
 
     }
@@ -33,6 +33,8 @@ public class Match extends StackPane {
 
         board.setMaxSize(700,200);
         getChildren().addAll(board, matchStats);
+        setPadding(new Insets(10));
+
 
     }
 

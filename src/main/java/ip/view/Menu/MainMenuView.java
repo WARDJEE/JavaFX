@@ -1,5 +1,6 @@
 package ip.view.Menu;
 
+import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 

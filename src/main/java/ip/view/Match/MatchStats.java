@@ -53,7 +53,7 @@ public class MatchStats extends BorderPane {
                 """);
 
         p2.setStyle("""
-                -fx-background-color: #317c87;
+                -fx-background-color: #50b4c3;
                 -fx-background-radius: 8;
                 -fx-border-color: black;
                 -fx-border-style: solid;

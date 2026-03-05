@@ -13,7 +13,7 @@ public class SahkkuButtonOrange extends Button {
 
         this.setStyle("""
                 -fx-background-color: #db604c;
-                -fx-text-fill: #E0F7FA;
+                -fx-text-fill: white;
                 -fx-border-color: #5e2052;
                 -fx-background-insets: 1;
                 -fx-border-radius: 8;
