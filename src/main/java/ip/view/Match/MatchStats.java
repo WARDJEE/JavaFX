@@ -4,10 +4,8 @@ import javafx.scene.layout.BorderPane;
 
 
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class MatchStats extends BorderPane {
@@ -17,12 +15,8 @@ public class MatchStats extends BorderPane {
     private HBox stats2;
     private Label name1;
     private Label name2;
-    private Label stepped1;
-    private Label stepped2;
-    private int capturedPawns1 = 5;
-    private int capturedPawns2 = 6;
-    private int steps1 = 68;
-    private int steps2 = 73;
+    private Label steps1;
+    private Label steps2;
     private Label captured1;
     private Label captured2;
 
@@ -34,22 +28,24 @@ public class MatchStats extends BorderPane {
     }
 
     private void initialNodes() {
-        name1 = new Label("Player 1");
-        captured1 = new Label("Captured: " + capturedPawns1);
-        stepped1 = new Label("Steps: " + steps1);
-        stats1 = new HBox(captured1, stepped1);
+        name1 = new Label();
+        captured1 = new Label();
+        steps1 = new Label();
+        stats1 = new HBox(captured1, steps1);
         p1 = new VBox(name1, stats1);
 
-        name2 = new Label("Player 2");
-        captured2 = new Label("Captured: " + capturedPawns2);
-        stepped2 = new Label("Steps: " + steps2);
-        stats2 = new HBox(captured2, stepped2);
+        name2 = new Label();
+        captured2 = new Label();
+        steps2 = new Label();
+        stats2 = new HBox(captured2, steps2);
         p2 = new VBox(name2, stats2);
 
     }
 
     private void styleNodes() {
         p1.setStyle("""
+                -fx-background-color: #734f1e;
+                -fx-background-radius: 8;
                 -fx-border-color: black;
                 -fx-border-style: solid;
                 -fx-border-width: 2;
@@ -57,6 +53,8 @@ public class MatchStats extends BorderPane {
                 """);
 
         p2.setStyle("""
+                -fx-background-color: #734f1e;
+                -fx-background-radius: 8;
                 -fx-border-color: black;
                 -fx-border-style: solid;
                 -fx-border-width: 2;
@@ -69,8 +67,8 @@ public class MatchStats extends BorderPane {
         captured1.setPadding(new Insets(5));
         captured2.setPadding(new Insets(5));
 
-        stepped1.setPadding(new Insets(5));
-        stepped2.setPadding(new Insets(5));
+        steps1.setPadding(new Insets(5));
+        steps2.setPadding(new Insets(5));
 
         name1.setPadding(new Insets(5));
         name2.setPadding(new Insets(5));
@@ -83,6 +81,28 @@ public class MatchStats extends BorderPane {
 
     }
 
+    public Label getName1() {
+        return name1;
+    }
 
+    public Label getName2() {
+        return name2;
+    }
+
+    public Label getCapturedPawns1() {
+        return captured1;
+    }
+
+    public Label getCapturedPawns2() {
+        return captured2;
+    }
+
+    public Label getSteps1() {
+        return steps1;
+    }
+
+    public Label getSteps2() {
+        return steps2;
+    }
 }
 

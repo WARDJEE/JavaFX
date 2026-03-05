@@ -1,10 +1,10 @@
-package ip;
+package ip.view.Menu;
 
+import ip.model.MatchModel;
 import ip.router.Router;
 import ip.view.*;
 import ip.view.Match.Match;
-import ip.view.Match.MatchStats;
-import ip.view.Menu.MainMenuView;
+import ip.view.Match.MatchPresenter;
 import javafx.stage.Stage;
 
 public class Presenter {
@@ -39,6 +39,8 @@ public class Presenter {
         // Play
         mainMenuView.getLeftMenu().getPlay().setOnAction(e -> {
             Match match = new Match();
+            MatchModel model = new MatchModel();
+            new MatchPresenter(model, match);
             router.showOverlay(match);
 
         });
