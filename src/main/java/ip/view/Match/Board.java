@@ -2,27 +2,23 @@ package ip.view.Match;
 
 import ip.model.Pawn;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 
 public class Board extends GridPane {
-    private final int width = 14;
-    private final int height = 2;
+    private final int columns = 15;
+    private final int rows = 2;
     private Square[][] squares;
 
     public Board() {
         initialiseNodes();
         styleNodes();
         makeBoard();
-
-        for (int i = 0; i < width; i++) {
-            Pawn pawn = new Pawn();
-            placePawn(pawn, i, 0, pawn.isActivated());
-        }
-
     }
 
     private void initialiseNodes(){
-        squares = new Square[height][width];
+        squares = new Square[rows][columns];
+
     }
 
     private void styleNodes(){
@@ -39,15 +35,17 @@ public class Board extends GridPane {
     }
 
     private void makeBoard(){
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width; col++) {
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < columns; col++) {
                 StackPane cell = new StackPane();
-                cell.setPrefSize(50, 100);
+                cell.setPrefSize(100, 200);
+
+
                 cell.setStyle("""
                         -fx-background-color: #f6dbba;
                         """);
 
-                Square square = new Square();
+                Square square = new Square(row, col);
                 squares[row][col] = square;
 
                 cell.getChildren().add(square);
@@ -57,9 +55,18 @@ public class Board extends GridPane {
         }
     }
 
-    public void placePawn(Pawn pawn, int x, int y, boolean isActivated){
-        squares[y][x].addPawn(pawn, isActivated);
+    public int getColumns() {
+        return columns;
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public Square[][] getSquares() {
+        return squares;
+    }
+
 
 
 }

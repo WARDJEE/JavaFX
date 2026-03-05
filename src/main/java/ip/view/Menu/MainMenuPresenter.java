@@ -3,6 +3,8 @@ package ip.view.Menu;
 import ip.model.MatchModel;
 import ip.router.Router;
 import ip.view.*;
+import ip.view.Match.Board;
+import ip.view.Match.BoardPresenter;
 import ip.view.Match.Match;
 import ip.view.Match.MatchPresenter;
 import javafx.stage.Stage;
@@ -43,6 +45,8 @@ public class MainMenuPresenter {
             MatchModel matchModel = new MatchModel();
             new MatchPresenter(matchModel, matchView);
             router.showOverlay(matchView);
+
+            new BoardPresenter(matchView.getBoard());
 
         });
     }

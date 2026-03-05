@@ -21,7 +21,7 @@ public class SahkkuButtonBlue extends Button {
             """);
 
         // Hover effect
-        this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: #271854;"));
+        this.setOnMouseEntered(e -> this.setStyle(this.getStyle() + "-fx-background-color: #6c5ecf;"));
         this.setOnMouseExited(e -> this.setStyle(this.getStyle() + "-fx-background-color:  #50b4c3;"));
 
     }

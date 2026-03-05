@@ -1,5 +1,9 @@
 package ip.view.Match;
 
+import ip.style.SahkkuButtonBlue;
+import ip.style.SahkkuButtonOrange;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
 
@@ -19,6 +23,9 @@ public class MatchStats extends BorderPane {
     private Label steps2;
     private Label captured1;
     private Label captured2;
+    private Button pause;
+    private Button undo;
+    private HBox menu;
 
 
     public MatchStats() {
@@ -39,6 +46,10 @@ public class MatchStats extends BorderPane {
         steps2 = new Label();
         stats2 = new HBox(captured2, steps2);
         p2 = new VBox(name2, stats2);
+
+        pause = new SahkkuButtonOrange("||");
+        undo = new SahkkuButtonBlue("<<");
+        menu = new HBox(pause, undo);
 
     }
 
@@ -61,8 +72,8 @@ public class MatchStats extends BorderPane {
                 -fx-border-radius: 8;
                 """);
 
-        p1.setMaxSize(VBox.USE_PREF_SIZE, VBox.USE_PREF_SIZE);
-        p2.setMaxSize(VBox.USE_PREF_SIZE, VBox.USE_PREF_SIZE);
+        p1.setMaxSize(USE_PREF_SIZE, USE_PREF_SIZE);
+        p2.setMaxSize(USE_PREF_SIZE, USE_PREF_SIZE);
 
         captured1.setPadding(new Insets(5));
         captured2.setPadding(new Insets(5));
@@ -78,6 +89,7 @@ public class MatchStats extends BorderPane {
     private void layoutNodes() {
         setBottom(p1);
         setRight(p2);
+        setTop(menu);
 
     }
 

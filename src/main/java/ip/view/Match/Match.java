@@ -1,15 +1,14 @@
 package ip.view.Match;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
 public class Match extends StackPane {
     private Board board;
     private MatchStats matchStats;
+
 
     public Match() {
         initialNodes();
@@ -31,7 +30,7 @@ public class Match extends StackPane {
 
     private void layoutNodes() {
 
-        board.setMaxSize(700,200);
+        board.setMaxSize(1000,400);
         getChildren().addAll(board, matchStats);
         setPadding(new Insets(10));
 
@@ -62,5 +61,7 @@ public class Match extends StackPane {
         return matchStats.getSteps2();
     }
 
-
+    public Board getBoard() {
+        return board;
+    }
 }
