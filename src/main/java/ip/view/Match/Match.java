@@ -24,7 +24,7 @@ public class Match extends StackPane {
 
     private void styleNodes(){
         setStyle("""
-                -fx-background-color: #aa8e5f;
+                -fx-background-color: #f6dbba;
                 """);
 
     }

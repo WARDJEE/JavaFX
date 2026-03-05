@@ -1,6 +1,6 @@
 package ip.view.Menu;
 
-import ip.style.SahkkuButton;
+import ip.style.SahkkuButtonOrange;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,9 +23,9 @@ public class LeftMenuView extends VBox {
 
     private void initialiseNodes() {
         title = new Label("Sáhkku");
-        play = new SahkkuButton("Play");
-        credits = new SahkkuButton("Credits");
-        exit = new SahkkuButton("Exit");
+        play = new SahkkuButtonOrange("Play");
+        credits = new SahkkuButtonOrange("Credits");
+        exit = new SahkkuButtonOrange("Exit");
     }
 
     private void styleNodes(){

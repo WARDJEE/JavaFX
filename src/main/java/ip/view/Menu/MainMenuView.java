@@ -28,7 +28,7 @@ public class MainMenuView extends BorderPane {
 
 
         // Langer manier
-        Image image = new Image("deer.jpg");
+        /*Image image = new Image("deer.jpg");
 
         BackgroundImage backgroundImage = new BackgroundImage(
                 image,
@@ -38,7 +38,8 @@ public class MainMenuView extends BorderPane {
                 new BackgroundSize(1.0, 1.0, true, true, false, false)
         );
 
-        setBackground(new Background(backgroundImage));
+        setBackground(new Background(backgroundImage));*/
+        setStyle("-fx-background-color: #f6dbba");
     }
 
     private void layoutNodes() {

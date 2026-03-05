@@ -1,6 +1,7 @@
 package ip.view.Menu;
 
-import ip.style.SahkkuButton;
+import ip.style.SahkkuButtonBlue;
+import ip.style.SahkkuButtonOrange;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -19,16 +20,16 @@ public class RightMenuView extends VBox{
     }
 
     private void initialiseNodes(){
-        settings = new SahkkuButton("Settings");
-        rules = new SahkkuButton("Rules");
-        leaderboard = new SahkkuButton("Leaderboard");
-        account = new SahkkuButton("Account");
+        settings = new SahkkuButtonBlue("Settings");
+        rules = new SahkkuButtonBlue("Rules");
+        leaderboard = new SahkkuButtonBlue("Leaderboard");
+        account = new SahkkuButtonBlue("Account");
     }
 
     private void styleNodes(){
-        this.setSpacing(15);
-        this.setPadding(new Insets(15));
-        this.setAlignment(Pos.TOP_RIGHT);
+        setSpacing(15);
+        setPadding(new Insets(15));
+        setAlignment(Pos.TOP_RIGHT);
 
 
     }
@@ -37,7 +38,7 @@ public class RightMenuView extends VBox{
         Region spacer = new Region();
         VBox.setVgrow(spacer, Priority.ALWAYS);
 
-        this.getChildren().addAll(settings, rules, spacer, leaderboard, account);
+        getChildren().addAll(settings, rules, spacer, leaderboard, account);
     }
 
 

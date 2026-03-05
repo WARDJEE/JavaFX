@@ -1,6 +1,7 @@
 package ip.view;
 
-import ip.style.SahkkuButton;
+import ip.style.SahkkuButtonBlue;
+import ip.style.SahkkuButtonOrange;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -25,8 +26,8 @@ public class AccountView extends StackPane {
     private void initialiseNodes() {
         close = new Button("✕");
         title = new Label("Sáhkku");
-        login = new SahkkuButton("Log in");
-        create = new SahkkuButton("Create account");
+        login = new SahkkuButtonOrange("Log in");
+        create = new SahkkuButtonBlue("Create account");
         contentBox = new VBox();
     }
 
@@ -37,8 +38,8 @@ public class AccountView extends StackPane {
         contentBox.setPadding(new Insets(20));
         contentBox.setMaxSize(300, 200);
         contentBox.setStyle("""
-            -fx-background-color: rgba(20, 30, 40, 0.8);
-            -fx-border-color: #00FFFF;
+            -fx-background-color: rgba(255, 255, 255, 0.8);
+            -fx-border-color: #74c99e;
             -fx-border-radius: 8;
             -fx-background-radius: 8;
         """);

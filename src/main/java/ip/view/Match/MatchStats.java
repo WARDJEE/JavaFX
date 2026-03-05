@@ -44,7 +44,7 @@ public class MatchStats extends BorderPane {
 
     private void styleNodes() {
         p1.setStyle("""
-                -fx-background-color: #734f1e;
+                -fx-background-color: #db604c;
                 -fx-background-radius: 8;
                 -fx-border-color: black;
                 -fx-border-style: solid;
@@ -53,7 +53,7 @@ public class MatchStats extends BorderPane {
                 """);
 
         p2.setStyle("""
-                -fx-background-color: #734f1e;
+                -fx-background-color: #317c87;
                 -fx-background-radius: 8;
                 -fx-border-color: black;
                 -fx-border-style: solid;
