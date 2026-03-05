@@ -56,11 +56,19 @@ public class ConverterView extends BorderPane {
         return convertButton;
     }
 
-    public TextField getDecimalValue() {
-        return decimalValue;
+    public String getDecimalValue() {
+        return decimalValue.getText();
     }
 
     public String getNumericalSystems() {
         return numericalSystems.getValue().toUpperCase();
+    }
+
+    public ComboBox<String> getComboBox(){
+        return numericalSystems;
+    }
+
+    public Label getConvertedValue() {
+        return convertedValue;
     }
 }

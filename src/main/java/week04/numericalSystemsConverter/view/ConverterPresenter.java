@@ -5,6 +5,7 @@ import week04.numericalSystemsConverter.model.ModelConverter;
 public class ConverterPresenter {
     private final ModelConverter model;
     private final ConverterView view;
+    private String convertedValue;
 
     public ConverterPresenter(ModelConverter model, ConverterView view) {
         this.model = model;
@@ -14,10 +15,18 @@ public class ConverterPresenter {
     }
 
     private void addEventHandlers() {
-        view.getConvertButton().setOnAction(e ->
-            model.convertToNumericalSystem(String.valueOf(view.getDecimalValue()), ModelConverter.NumericalSystems.valueOf(view.getNumericalSystems()))
+        view.getConvertButton().setOnAction(e -> {
+                    convertedValue = model.convertToNumericalSystem(view.getDecimalValue(), ModelConverter.NumericalSystems.valueOf(view.getNumericalSystems()));
+                    updateView();
+                }
         );
 
+        view.getComboBox().setOnAction(e -> view.getConvertedValue().setText("XXXXX"));
+
+
     }
-    private void updateView() {/* fills view*/}
+
+    private void updateView() {/* fills view*/
+        view.getConvertedValue().setText(convertedValue);
+    }
 }
