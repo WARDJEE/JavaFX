@@ -1,4 +1,4 @@
-package week01.Background;
+package week01.background;
 
 public class BackgroundPresenter {
     private Background model;

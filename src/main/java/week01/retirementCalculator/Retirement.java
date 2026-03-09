@@ -1,4 +1,4 @@
-package week01.RetirementCalculator;
+package week01.retirementCalculator;
 
 public class Retirement {
     private int birthYear;

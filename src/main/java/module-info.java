@@ -2,5 +2,5 @@ module hello {
     requires javafx.controls;
     requires freetts;
     requires java.management;
-    exports sahkku;
+    exports week05;
 }

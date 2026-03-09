@@ -1,4 +1,4 @@
-package week01.OnStage;
+package week01.onStage;
 
 import javafx.application.Application;
 import javafx.scene.Cursor;

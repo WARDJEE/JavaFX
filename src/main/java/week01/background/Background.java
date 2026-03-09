@@ -1,4 +1,4 @@
-package week01.Background;
+package week01.background;
 
 import java.util.Random;
 

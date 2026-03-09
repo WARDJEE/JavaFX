@@ -1,4 +1,4 @@
-package week01.RetirementCalculator;
+package week01.retirementCalculator;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;

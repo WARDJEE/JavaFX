@@ -1,4 +1,4 @@
-package week01.RetirementCalculator;
+package week01.retirementCalculator;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

@@ -1,4 +1,4 @@
-package week01.Reverse;
+package week01.reverse;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

@@ -1,4 +1,4 @@
-package week01.Reverse;
+package week01.reverse;
 
 public class Reverse {
     private String text;

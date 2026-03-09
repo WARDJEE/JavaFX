@@ -1,4 +1,4 @@
-package week01.Dice;
+package week01.dice;
 
 import java.util.Random;
 
