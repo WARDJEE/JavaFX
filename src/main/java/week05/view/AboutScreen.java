@@ -27,4 +27,8 @@ public class AboutScreen extends BorderPane {
         setBottom(ok);
         setAlignment(ok, Pos.BOTTOM_RIGHT);
     }
+
+    public Button getOk() {
+        return ok;
+    }
 }

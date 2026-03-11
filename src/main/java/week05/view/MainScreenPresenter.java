@@ -2,6 +2,7 @@ package week05.view;
 
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import week05.model.DiceThrowsSimulator;
 import javafx.event.ActionEvent;
@@ -57,6 +58,9 @@ public class MainScreenPresenter {
 
             AboutScreen aboutScreen = new AboutScreen();
             about.setScene(new Scene(aboutScreen));
+
+            about.initModality(Modality.APPLICATION_MODAL);
+            aboutScreen.getOk().setOnAction(ev -> about.close());
 
             about.show();
         });
