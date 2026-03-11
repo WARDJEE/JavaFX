@@ -30,4 +30,20 @@ public class MultiSidedDice {
     }
     public int getDiceMinimum () { return this.min;}
     public int getNumberOfSides () { return this.max - this.min + 1;}
+
+    public void setMinAndMax(int min, int max) throws IllegalArgumentException{
+        if (min < MIN_VALUE || min > MAX_VALUE) {
+            throw new IllegalArgumentException("Min must be between " + MIN_VALUE + " and " + MAX_VALUE);
+        }
+
+        if (max < MIN_VALUE || max > MAX_VALUE) {
+            throw new IllegalArgumentException("Max must be between " + MIN_VALUE + " and " + MAX_VALUE);
+        }
+
+        if (min >= max) {
+            throw new IllegalArgumentException("The min-value must be lower than max.");
+        }
+        this.min = min;
+        this.max = max;
+    }
 }

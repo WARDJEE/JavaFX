@@ -1,0 +1,30 @@
+package week05.view;
+
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+
+public class AboutScreen extends BorderPane {
+    private Image dice;
+    private Button ok;
+    private ImageView imageView;
+
+    public AboutScreen(){
+        initialiseNodes();
+        layoutNodes();
+    }
+
+    private void initialiseNodes(){
+        dice = new Image("dice100.png");
+        imageView = new ImageView(dice);
+        ok = new Button("ok");
+    }
+
+    private void layoutNodes(){
+        setCenter(imageView);
+        setBottom(ok);
+        setAlignment(ok, Pos.BOTTOM_RIGHT);
+    }
+}

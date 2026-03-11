@@ -1,6 +1,8 @@
 package week05.view;
 
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import week05.model.DiceThrowsSimulator;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -35,6 +37,7 @@ public class MainScreenPresenter {
     }
 
     private void updateView() {
+        model.multiSidedDiceThrow((Integer) view.getSpinnerMin().getValue(), (Integer) view.getSpinnerMax().getValue());
         String nameOfFileTens = "number" + model.getMultiSidedDiceValue() / 10 + ".jpg";
         String nameOfFileUnit = "number" + model.getMultiSidedDiceValue() % 10 + ".jpg";
 
@@ -47,6 +50,16 @@ public class MainScreenPresenter {
         view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) { handleCloseEvent(event); }});
+
+        view.getAbout().setOnAction(e -> {
+            Stage about = new Stage();
+            about.setTitle("1- 100-Sided Dice - About");
+
+            AboutScreen aboutScreen = new AboutScreen();
+            about.setScene(new Scene(aboutScreen));
+
+            about.show();
+        });
     }
 
     private void handleCloseEvent(Event event){

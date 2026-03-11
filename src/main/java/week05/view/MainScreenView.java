@@ -2,9 +2,7 @@ package week05.view;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -18,6 +16,11 @@ public class MainScreenView extends BorderPane {
     private Spinner spinnerFieldMin;
     private Button btnGenerate;
 
+    private Menu help;
+    private MenuItem about;
+    private MenuItem exit;
+    private MenuBar menu;
+
     public MainScreenView() {
         initialiseNodes();
         layoutNodes();
@@ -28,6 +31,11 @@ public class MainScreenView extends BorderPane {
         btnGenerate = new Button("Generate");
         spinnerFieldMax = new Spinner<Integer> (1,99,6);
         spinnerFieldMin = new Spinner<Integer> (0,98,1);
+        about = new MenuItem("About");
+        exit = new MenuItem("Exit");
+        help = new Menu("Help");
+        help.getItems().addAll(about, exit);
+        menu = new MenuBar(help);
     }
 
     private void layoutNodes() {
@@ -48,10 +56,15 @@ public class MainScreenView extends BorderPane {
         playfield.add(numberTens, 3, 0);
         playfield.add(numberUnit, 4, 0);
         this.setCenter(playfield);
+        setTop(menu);
     }
     ImageView getNumberTens() { return this.numberTens; }
     ImageView getNumberUnit() { return this.numberUnit; }
     Spinner getSpinnerMin () { return this.spinnerFieldMin;}
     Spinner getSpinnerMax () { return this.spinnerFieldMax;}
     Button getBtnGenerate() { return btnGenerate; }
+
+    public MenuItem getAbout() {
+        return about;
+    }
 }
