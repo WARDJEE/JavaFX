@@ -21,6 +21,9 @@ public class MainScreenView extends BorderPane {
     private MenuItem exit;
     private MenuBar menu;
 
+    private Menu results;
+    private MenuItem overview;
+
     public MainScreenView() {
         initialiseNodes();
         layoutNodes();
@@ -35,7 +38,10 @@ public class MainScreenView extends BorderPane {
         exit = new MenuItem("Exit");
         help = new Menu("Help");
         help.getItems().addAll(about, exit);
-        menu = new MenuBar(help);
+        overview = new MenuItem("Overview results");
+        results = new Menu("Results");
+        results.getItems().add(overview);
+        menu = new MenuBar(help, results);
     }
 
     private void layoutNodes() {
@@ -66,5 +72,9 @@ public class MainScreenView extends BorderPane {
 
     public MenuItem getAbout() {
         return about;
+    }
+
+    public MenuItem getExit() {
+        return exit;
     }
 }

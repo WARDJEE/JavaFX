@@ -23,7 +23,7 @@ public class AboutScreen extends BorderPane {
     }
 
     private void layoutNodes(){
-        setCenter(imageView);
+        setTop(imageView);
         setBottom(ok);
         setAlignment(ok, Pos.BOTTOM_RIGHT);
     }

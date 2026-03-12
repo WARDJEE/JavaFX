@@ -31,7 +31,11 @@ public class MainScreenPresenter {
             public void handle(ActionEvent event) {
                 int maxValue = (int)view.getSpinnerMax().getValue();
                 int minValue = (int)view.getSpinnerMin().getValue();
+                try{
                 model.multiSidedDiceThrow(minValue, maxValue);
+                }catch (IllegalArgumentException e){
+                    showError(e);
+                }
                 updateView();
             }
         });
@@ -51,6 +55,8 @@ public class MainScreenPresenter {
         view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) { handleCloseEvent(event); }});
+
+        view.getExit().setOnAction(e -> handleCloseEvent(e));
 
         view.getAbout().setOnAction(e -> {
             Stage about = new Stage();
@@ -81,6 +87,13 @@ public class MainScreenPresenter {
         } else {
             view.getScene().getWindow().hide();
         }
+    }
+
+    private void showError(Exception exc) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error!");
+        alert.setContentText(exc.getMessage());
+        alert.showAndWait();
     }
 }
 
