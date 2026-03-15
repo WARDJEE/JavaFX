@@ -77,4 +77,8 @@ public class MainScreenView extends BorderPane {
     public MenuItem getExit() {
         return exit;
     }
+
+    public MenuItem getOverview() {
+        return overview;
+    }
 }

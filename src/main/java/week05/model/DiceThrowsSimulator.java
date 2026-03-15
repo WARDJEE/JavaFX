@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DiceThrowsSimulator {
     private MultiSidedDice dice;
-    private ThrowsArchive throwsArchive;
+    //private ThrowsArchive throwsArchive;
     private DiceDao diceDao;
 
     public DiceThrowsSimulator (DiceDao diceDao) {
@@ -14,8 +14,8 @@ public class DiceThrowsSimulator {
     }
     public DiceThrowsSimulator (int minimum, int maximum, DiceDao diceDao) {
         dice = new MultiSidedDice(minimum,maximum);
-        throwsArchive = new ThrowsArchive();
-        throwsArchive.addValueToArchive (dice);
+        //throwsArchive = new ThrowsArchive();
+        //throwsArchive.addValueToArchive (dice);
         this.diceDao = diceDao;
     }
     public int getMultiSidedDiceValue () {
@@ -24,7 +24,6 @@ public class DiceThrowsSimulator {
     public int multiSidedDiceThrow (int minimum, int maximum) {
         dice.setMinAndMax(minimum, maximum);
         int value = dice.getNewDiceValue();
-        throwsArchive.addValueToArchive (dice);
 
         try {
             diceDao.create(dice);
@@ -35,5 +34,5 @@ public class DiceThrowsSimulator {
         return value;
     }
     public MultiSidedDice getDice (){return dice;}
-    public ThrowsArchive getThrowsArchive () {return throwsArchive;}
+    //public ThrowsArchive getThrowsArchive () {return throwsArchive;}
 }

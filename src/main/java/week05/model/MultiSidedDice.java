@@ -16,6 +16,7 @@ public class MultiSidedDice {
     }
 
     public MultiSidedDice(int minimum, int maximum) {
+        setMinAndMax(minimum, maximum);
         throwDice();
     }
     public void throwDice(){

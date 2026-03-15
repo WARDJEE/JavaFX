@@ -19,7 +19,7 @@ public class HundredSidedMain extends Application {
             diceDao = new DiceDao();
             DiceThrowsSimulator model = new DiceThrowsSimulator(diceDao);
             MainScreenView view = new MainScreenView();
-            MainScreenPresenter presenter = new MainScreenPresenter(model, view);
+            MainScreenPresenter presenter = new MainScreenPresenter(model, view, diceDao);
             Scene scene = new Scene(view);
 
             primaryStage.setScene(scene);

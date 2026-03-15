@@ -16,7 +16,7 @@ public class DaoUtils {
 
     public static Connection createConnection() throws SQLException{
         try {
-            Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:db/myDatabase","sa", "");
+            Connection connection = DriverManager.getConnection("jdbc:hsqldb:file:recourses/database/hundredSidedDiceDB","sa", "");
             return connection;
         } catch (SQLException e){
             throw new SQLException("Cannot create connection with database", e);

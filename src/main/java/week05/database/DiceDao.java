@@ -7,7 +7,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class DiceDao {
@@ -21,7 +23,7 @@ public class DiceDao {
         createTable();
     }
 
-    private void createTable() {
+    private void createTable() throws SQLException{
         try {
             Statement statement = DaoUtils.createStatement(connection);
             statement.execute("CREATE TABLE IF NOT EXISTS Dices (" +
@@ -33,17 +35,14 @@ public class DiceDao {
             DaoUtils.closeStatement(statement);
             connection.commit();
         } catch (SQLException e) {
-            if (e.getSQLState().equals("42501")) {
-                System.err.println("Tabel bestaat al: " + e.getMessage());
-            }
-            else System.err.println("Fout bij het aanmaken van de tabel: " + e.getMessage());
+            throw new SQLException("Fout bij het aanmaken van de database: " + e.getMessage());
         }
     }
 
     public void create(MultiSidedDice dice) throws SQLException {
         try {
             Statement statement = DaoUtils.createStatement(connection);
-            String query = String.format("INSERT INTO Dices VALUES (%d, %d, %d, %d)", dice.getDiceMaximum()-dice.getDiceMinimum(), dice.getCurrentDiceValue(), dice.getDiceMinimum(), dice.getDiceMaximum());
+            String query = String.format("INSERT INTO Dices VALUES (%d, %d, %d, %d)", dice.getNumberOfSides(), dice.getCurrentDiceValue(), dice.getDiceMinimum(), dice.getDiceMaximum());
             statement.executeUpdate(query);
             throwsArchive.addValueToArchive(dice);
             DaoUtils.closeStatement(statement);
@@ -71,6 +70,27 @@ public class DiceDao {
 
     public void close() throws SQLException {
         DaoUtils.closeConnection(connection);
+    }
+
+    public List<Object[]> getStats() throws SQLException {
+        List<Object[]> stats = new ArrayList<>();
+        String query = "SELECT numberOfSides, COUNT(*) as total, " +
+                "SUM(CASE WHEN value = min THEN 1 ELSE 0 END) as hitMin, " +
+                "SUM(CASE WHEN value = max THEN 1 ELSE 0 END) as hitMax " +
+                "FROM Dices GROUP BY numberOfSides";
+
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+            while (resultSet.next()) {
+                stats.add(new Object[]{
+                        resultSet.getInt("numberOfSides"),
+                        resultSet.getInt("total"),
+                        resultSet.getInt("hitMin"),
+                        resultSet.getInt("hitMax")
+                });
+            }
+        }
+        return stats;
     }
 
 }

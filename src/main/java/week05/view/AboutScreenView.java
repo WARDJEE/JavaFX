@@ -6,12 +6,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
-public class AboutScreen extends BorderPane {
+public class AboutScreenView extends BorderPane {
     private Image dice;
     private Button ok;
     private ImageView imageView;
 
-    public AboutScreen(){
+    public AboutScreenView(){
         initialiseNodes();
         layoutNodes();
     }
