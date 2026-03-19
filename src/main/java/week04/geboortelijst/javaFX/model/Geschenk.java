@@ -1,4 +1,4 @@
-package week04.geboortelijst;
+package week04.geboortelijst.javaFX.model;
 
 public class Geschenk {
     private String naam;
@@ -29,14 +29,14 @@ public class Geschenk {
         if (prijs < 0) {
             throw new IllegalArgumentException("Prijs mag niet negatief zijn.");
         }
-       this.prijs = prijs;
+        this.prijs = prijs;
     }
 
     public String getKoper() {
         return koper;
     }
 
-    public void setKoper(String koper) throws  GeboortelijstException{
+    public void setKoper(String koper) throws GeboortelijstException{
         if (this.koper != null){
             throw new GeboortelijstException(this.koper + " heeft " + this.naam + " al gekocht.");
         }

@@ -1,4 +1,4 @@
-package week04.geboortelijst;
+package week04.geboortelijst.javaFX.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,9 @@ public class Geboortelijst {
         geschenken.add(geschenk);
     }
 
-    public void koop(String geschenknaam, String koper) throws GeboortelijstException{
-        //zoek het geschenk op in de lijst:
+    public void koop(String geschenknaam, String koper) throws GeboortelijstException {
         for (Geschenk geschenk: geschenken) {
-            if (geschenk.getNaam().equals(geschenknaam)) {
+            if (geschenk.getNaam().equalsIgnoreCase(geschenknaam)) {
                 geschenk.setKoper(koper);
                 return;
             }
@@ -28,11 +27,7 @@ public class Geboortelijst {
         throw new GeboortelijstException("\"" + geschenknaam + "\" staat niet in de lijst.");
     }
 
-    public void toon(){
-        System.out.println("Geboortelijst van " + naam);
-        System.out.println("===============================");
-        for (Geschenk geschenk : geschenken) {
-            System.out.println(geschenk);
-        }
+    public List<Geschenk> getGeschenken(){
+        return this.geschenken;
     }
 }

@@ -1,4 +1,4 @@
-package week04.geboortelijst;
+package week04.geboortelijst.java;
 
 public class Main {
     public static void main(String[] args) {

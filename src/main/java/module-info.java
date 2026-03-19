@@ -4,5 +4,5 @@ module hello {
     requires java.management;
     requires java.sql;
     requires org.hsqldb;
-    exports week06;
+    exports week04.geboortelijst.javaFX;
 }

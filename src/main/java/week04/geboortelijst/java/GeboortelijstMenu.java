@@ -1,4 +1,4 @@
-package week04.geboortelijst;
+package week04.geboortelijst.java;
 
 import java.util.Scanner;
 
@@ -14,10 +14,10 @@ public class GeboortelijstMenu {
         geboortelijst.toon();
         String antwoord = null;
         do {
-            System.out.print("Welk geschenk wil je kopen?");
+            System.out.print("Welk geschenk wil je kopen? ");
             Scanner scanner = new Scanner(System.in);
             String geschenknaam = scanner.nextLine();
-            System.out.print("Wat is je naam?");
+            System.out.print("Wat is je naam? ");
             String koper = scanner.nextLine();
             try {
                 geboortelijst.koop(geschenknaam, koper);
@@ -25,7 +25,7 @@ public class GeboortelijstMenu {
             } catch (GeboortelijstException e) {
                 System.out.println("Fout: " + e.getMessage());
             }
-            System.out.print("Nog geschenken kopen?");
+            System.out.print("Nog geschenken kopen? ");
             antwoord = scanner.nextLine();
         } while (antwoord.equalsIgnoreCase("ja"));
     }
