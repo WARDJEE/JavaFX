@@ -4,5 +4,6 @@ module hello {
     requires java.management;
     requires java.sql;
     requires org.hsqldb;
-    exports week05;
+    // Change to package where you want to run a main
+    exports week06;
 }
