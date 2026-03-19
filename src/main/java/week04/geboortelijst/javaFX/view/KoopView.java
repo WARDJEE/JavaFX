@@ -34,9 +34,8 @@ public class KoopView extends GridPane {
 
     public String getKoper() { return naam.getText(); }
     public String getGeschenkNaam() { return geschenk.getText(); }
-    public Button getBtnBevestig() { return bevestig; }
 
-    public Button getButton(){
+    public Button getBevestig(){
         return bevestig;
     }
 }

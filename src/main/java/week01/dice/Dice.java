@@ -15,7 +15,6 @@ public class Dice {
         this.random = new Random();
     }
 
-    //Toss the dice because "throw" is am existing keyword in java.
     public void toss(){
         numberOfPips1 = random.nextInt(MAX_PIPS) + 1;
         numberOfPips2 = random.nextInt(MAX_PIPS) + 1;

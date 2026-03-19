@@ -1,6 +1,5 @@
 package week02.tiles.view;
 
-
 import week02.tiles.model.TileModel;
 
 public class Presenter {

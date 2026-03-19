@@ -1,6 +1,5 @@
 package week02.cityhall.view;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.effect.ColorAdjust;

@@ -13,8 +13,10 @@ public class RetirementPresenter {
     }
 
     public void addEventHandlers() {
-        view.getButton().setOnAction(e -> {model.setBirthYear(Integer.parseInt(view.getInput().getText()));
-        updateView();});
+        view.getButton().setOnAction(e -> {
+            model.setBirthYear(Integer.parseInt(view.getInput().getText()));
+            updateView();
+        });
 
     }
 

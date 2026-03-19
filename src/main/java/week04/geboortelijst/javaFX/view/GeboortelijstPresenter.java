@@ -39,7 +39,7 @@ public class GeboortelijstPresenter {
         Stage popup = new Stage();
         popup.initModality(Modality.APPLICATION_MODAL);
 
-        koopView.getBtnBevestig().setOnAction(e -> {
+        koopView.getBevestig().setOnAction(e -> {
             try {
                 model.koop(koopView.getGeschenkNaam(), koopView.getKoper());
                 updateView();

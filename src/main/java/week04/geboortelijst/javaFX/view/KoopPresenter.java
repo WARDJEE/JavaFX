@@ -12,7 +12,7 @@ public class KoopPresenter {
         this.model = model;
         this.view = view;
 
-        view.getButton().setOnAction(e -> {
+        view.getBevestig().setOnAction(e -> {
             try {
                 model.koop(view.getGeschenkNaam(), view.getKoper());
                 view.getScene().getWindow().hide();

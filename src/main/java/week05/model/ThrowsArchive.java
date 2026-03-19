@@ -12,10 +12,7 @@ public class ThrowsArchive {
     public void addValueToArchive (MultiSidedDice dice) {
         archiveOfThrows.add(dice);
     }
-    public int getTotalNumberOfThrows () {
-        int sum = 0;
-        return sum;
-    }
+
     @Override
     public String toString () {
         String string = this.archiveOfThrows.toString();

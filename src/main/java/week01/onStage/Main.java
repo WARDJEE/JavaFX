@@ -18,8 +18,7 @@ public class Main extends Application {
         stage.setWidth(500);
         stage.setHeight(600);
 
-
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.setTitle("stage");
         stage.setMaxWidth(700);
 

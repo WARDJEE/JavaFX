@@ -9,7 +9,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Reverse model = new Reverse("Enter text here");
         ReversView view = new ReversView();
-        ReversePresenter presenter = new ReversePresenter(model, view);
+        new ReversePresenter(model, view);
 
         stage.setTitle("Reverse");
         Scene scene = new Scene(view);

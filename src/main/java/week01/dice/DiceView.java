@@ -46,6 +46,5 @@ public class DiceView extends GridPane {
         this.setAlignment(Pos.CENTER);
         GridPane.setHalignment(button, javafx.geometry.HPos.CENTER);
 
-
     }
 }

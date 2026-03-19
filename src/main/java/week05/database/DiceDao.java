@@ -8,9 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class DiceDao {
     private Connection connection;
@@ -49,22 +47,6 @@ public class DiceDao {
             connection.commit();
         } catch (SQLException e) {
             throw new SQLException("Cannot create new dice", e);
-        }
-    }
-
-    public Set<Integer> retrieveAll() throws SQLException {
-        try {
-            Set<Integer> result = new HashSet<>();
-            Statement statement = DaoUtils.createStatement(connection);
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM Dices");
-            while (resultSet.next()) {
-                int value = resultSet.getInt("value");
-                result.add(value);
-            }
-            DaoUtils.closeStatement(statement);
-            return result;
-        } catch (SQLException e) {
-            throw new SQLException("Cannot retrieve data from database", e);
         }
     }
 

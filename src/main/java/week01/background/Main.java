@@ -10,7 +10,7 @@ public class Main extends Application {
 
         Background model = new Background();
         BackgroundView view = new BackgroundView();
-        BackgroundPresenter presenter = new BackgroundPresenter(model, view);
+        new BackgroundPresenter(model, view);
         stage.setTitle("Background");
         stage.setWidth(400);
         stage.setHeight(250);

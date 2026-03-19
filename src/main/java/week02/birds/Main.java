@@ -9,16 +9,15 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setHeight(500);
         stage.setWidth(500);
-        Scene scene = new Scene(new View(stage));
+        BirdsView birdsView = new BirdsView(stage);
+        new BirdsPresenter(birdsView);
+        Scene scene = new Scene(birdsView);
         stage.setScene(scene);
         stage.show();
 
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
-
-
 }

@@ -10,7 +10,7 @@ public class Main extends Application {
         stage.setTitle("dice");
         DiceView view = new DiceView();
         Dice model = new Dice();
-        DicePresenter presenter = new DicePresenter(model, view);
+        new DicePresenter(model, view);
 
         stage.setScene(new Scene(view));
         stage.show();

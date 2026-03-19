@@ -20,7 +20,6 @@ public class RetirementView extends GridPane {
 
     private void initialNodes() {
         input = new TextField("yyyy");
-        input.setPrefColumnCount(4);
 
         button = new Button("BirthYear > RetirementYear");
 

@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
-
 public class ConverterView extends BorderPane {
     private Label label;
     private TextField decimalValue;
